@@ -29,10 +29,7 @@ public class GitHubApi {
         conn.setRequestProperty("User-Agent","MCJointBan");
 
         int responseCode = conn.getResponseCode();
-
-        if (responseCode==200){
-            readLine(conn.getInputStream(),streamInterface);
-        }
+        readLine(conn.getInputStream(),streamInterface);
     }
 
     private String getSendBody(String url){
@@ -40,7 +37,7 @@ public class GitHubApi {
         try {
             sendGet(url, response::append);
         } catch (Exception ignored) {
-
+            ignored.printStackTrace();
         }
         return response.toString();
     }

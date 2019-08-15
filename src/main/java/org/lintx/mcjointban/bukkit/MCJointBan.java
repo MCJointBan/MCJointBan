@@ -25,7 +25,7 @@ public class MCJointBan extends JavaPlugin implements MCJointBanInterface {
         jointBan = new org.lintx.mcjointban.MCJointBan(this.getDataFolder(),getLogger(),this);
         task = new Task(jointBan);
         if (config.getCheckConfig().isOnOpen()){
-            jointBan.check();
+            getServer().getScheduler().runTaskAsynchronously(this, () -> jointBan.check());
         }
         if (config.getCheckConfig().getOnTimer()>0){
             long time = config.getCheckConfig().getOnTimer() * 20;
