@@ -1,0 +1,11 @@
+main: org.lintx.mcjointban.bukkit.MCJointBan
+name: MCJointBan
+version: 1.0.0
+author: LinTx
+commands:
+  jointban:
+    description: Manage MCJointBan
+    usage: /<coimmand>
+    aliases:
+      - jban
+    permission: op
